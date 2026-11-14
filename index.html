@@ -1,694 +1,538 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- SEO Meta Tags -->
-<title>RHK PROVIDER - Download Android Apps & APKs</title>
-<meta name="description" content="Discover and download free Android applications and APKs on RHK PROVIDER. Safe, simple, and direct app access.">
-<meta name="keywords" content="RHK PROVIDER, Android apps, APK download, mobile applications, android store">
-<meta name="robots" content="index, follow">
-<meta name="author" content="RHK PROVIDER">
-
-<!-- Open Graph / Social Media Meta Tags -->
-<meta property="og:title" content="RHK PROVIDER - Download Android Apps & APKs">
-<meta property="og:description" content="Discover and download free Android applications and APKs on RHK PROVIDER. Safe, simple, and direct app access.">
-<meta property="og:type" content="website">
-
-<!-- GOOGLE SITE VERIFICATION -->
-<meta name="google-site-verification" content="0vnZFZ154D1f55L_hxSQ496_-ElRPEg7fwjvXndFCXY" />
+<title>RHK WISHES</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #fff;
 }
 
-body{
-    background:#0b0b0f;
-    color:#fff;
+.screen {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background: white;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
+/* HEADER */
+.header {
+    height: 65px;
+    min-height: 65px;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(11,11,15,.95);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid #25252d;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
 }
 
-.navbar{
-    max-width:1100px;
-    margin:auto;
-    padding:18px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.rhk {
+    color: #000;
 }
 
-.logo{
-    font-size:23px;
-    font-weight:800;
-    letter-spacing:1px;
+.wishes {
+    color: #999;
+    font-weight: 600;
 }
 
-.logo span{
-    color:#7c5cff;
+/* MENU BUTTON */
+.menu-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
 }
 
-.nav-button{
-    border:1px solid #33333d;
-    padding:10px 16px;
-    border-radius:12px;
-    color:#ddd;
+.menu-btn span {
+    width: 23px;
+    height: 2px;
+    background: #000;
+    border-radius: 5px;
 }
 
-.hero{
-    max-width:1100px;
-    margin:auto;
-    padding:45px 20px 35px;
-    text-align:center;
+/* MAIN CONTENT */
+.content {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 22px 15px;
+    gap: 20px;
 }
 
-.badge{
-    display:inline-block;
-    padding:8px 14px;
-    border-radius:30px;
-    background:#171421;
-    border:1px solid #30264b;
-    color:#a996ff;
-    font-size:13px;
-    margin-bottom:18px;
+/* SECTION */
+.home-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 }
 
-.hero h1{
-    font-size:clamp(40px,8vw,70px);
-    margin-bottom:20px;
+/* TRENDING */
+.trending-section {
+    flex: 0 0 34%;
 }
 
-.hero h1 span{
-    color:#7c5cff;
+.section-title {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 13px;
+    flex-shrink: 0;
 }
 
-.hero p{
-    max-width:620px;
-    margin:auto;
-    color:#9999a3;
-    line-height:1.7;
-    font-size:16px;
+.trending-title {
+    color: #999;
 }
 
-.search-box{
-    max-width:620px;
-    margin:28px auto 0;
+.birthday-title .black-text {
+    color: #000;
 }
 
-.search-box input{
-    width:100%;
-    padding:17px 20px;
-    background:#15151b;
-    border:1px solid #30303a;
-    border-radius:14px;
-    outline:none;
-    color:white;
-    font-size:16px;
+.birthday-title .grey-text {
+    color: #999;
 }
 
-.search-box input:focus{
-    border-color:#7c5cff;
+/* TRENDING CARD */
+.trending-card {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
 }
 
-main{
-    max-width:1100px;
-    margin:auto;
-    padding:10px 20px 40px;
+/* TRENDING IMAGE */
+.trending-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
-.section-title{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin:20px 0;
+.trending-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #fff;
 }
 
-.section-title h2{
-    font-size:30px;
+/* BIRTHDAY SECTION */
+.templates-section {
+    flex: 1;
+    overflow: hidden;
 }
 
-.section-title p{
-    color:#777780;
+/* TEMPLATE SCROLL AREA */
+.template-area {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
 }
 
-.categories{
-    display:flex;
-    gap:10px;
-    overflow-x:auto;
-    padding-bottom:10px;
+.template-area::-webkit-scrollbar {
+    display: none;
 }
 
-.category{
-    white-space:nowrap;
-    padding:11px 18px;
-    border-radius:30px;
-    border:1px solid #30303a;
-    background:#15151b;
-    color:#aaa;
-    cursor:pointer;
+/* TWO COLUMN TEMPLATE GRID */
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    padding: 2px 2px 15px;
 }
 
-.category.active{
-    background:#7c5cff;
-    border-color:#7c5cff;
-    color:white;
+/* LARGE TEMPLATE CARD */
+.template-card {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1.18 / 1;
+    overflow: hidden;
+    background: #fff;
+    border: 2px solid #ededed;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-.app-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:18px;
-    margin-top:20px;
+.template-card:active {
+    transform: scale(0.97);
 }
 
-.app-card{
-    background:#15151b;
-    border:1px solid #292932;
-    border-radius:20px;
-    padding:20px;
+/* IMAGE */
+.template-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #fff;
 }
 
-.app-top{
-    display:flex;
-    align-items:center;
-    gap:15px;
+/* TEMPLATE COUNT */
+.template-count {
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 400;
+    margin-left: 5px;
 }
 
-.app-icon{
-    width:68px;
-    height:68px;
-    flex-shrink:0;
-    border-radius:17px;
-    background:#272731;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
+/* EMPTY MESSAGE */
+.empty-message {
+    color: #aaa;
+    font-size: 13px;
+    padding: 15px 0;
+    display: none;
 }
 
-.app-icon img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+/* MENU OVERLAY */
+.menu-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
 }
 
-.app-name{
-    font-size:20px;
-    font-weight:700;
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-.app-version{
-    margin-top:6px;
-    color:#888892;
-    font-size:13px;
+/* GLASS MENU */
+.menu-window {
+    position: absolute;
+    top: 58px;
+    right: 15px;
+    width: 230px;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    z-index: 11;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.95);
+    transform-origin: top right;
+    transition: 0.3s ease;
 }
 
-.app-description{
-    color:#9999a3;
-    line-height:1.6;
-    margin:18px 0;
-    font-size:14px;
+.menu-window.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
 }
 
-.download-button{
-    display:block;
-    width:100%;
-    text-align:center;
-    padding:14px;
-    border-radius:12px;
-    background:#7c5cff;
-    color:white;
-    font-weight:700;
+.menu-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 15px;
 }
 
-.loading{
-    text-align:center;
-    padding:50px 10px;
-    color:#777780;
+.menu-link {
+    display: block;
+    padding: 13px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    border-top: 1px solid rgba(0,0,0,0.07);
 }
 
-.error-message{
-    display:none;
-    text-align:center;
-    padding:30px 15px;
-    color:#ff8585;
-    line-height:1.7;
-}
-
-.no-results{
-    display:none;
-    text-align:center;
-    padding:50px 10px;
-    color:#777780;
-}
-
-footer{
-    margin-top:60px;
-    border-top:1px solid #24242d;
-    padding:40px 20px;
-    text-align:center;
-    color:#777780;
-}
-
-footer strong{
-    color:white;
-    font-size:16px;
-}
-
-@media(max-width:600px){
-
-    .navbar{
-        padding:15px;
-    }
-
-    .hero{
-        padding:35px 16px 25px;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    main{
-        padding:5px 15px 30px;
-    }
-
-    .app-grid{
-        grid-template-columns:1fr;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="navbar">
+<div class="screen">
 
-<a href="#" class="logo">
-RHK <span>PROVIDER</span>
-</a>
+    <!-- HEADER -->
+    <header class="header">
 
-<a href="#apps" class="nav-button">
-Apps
-</a>
+        <div class="logo">
+            <span class="rhk">RHK</span>
+            <span class="wishes">WISHES</span>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <!-- TRENDING -->
+        <section class="home-section trending-section">
+
+            <h2 class="section-title trending-title">
+                Trending
+            </h2>
+
+            <div class="trending-card" id="trendingCard"></div>
+
+        </section>
+
+        <!-- BIRTHDAY TEMPLATES -->
+        <section class="home-section templates-section">
+
+            <h2 class="section-title birthday-title">
+                <span class="black-text">Birthday</span>
+                <span class="grey-text">Template</span>
+
+                <span class="template-count" id="templateCount">
+                    Loading...
+                </span>
+            </h2>
+
+            <div class="template-area">
+
+                <div class="template-grid" id="templateGrid">
+                </div>
+
+                <div class="empty-message" id="emptyMessage">
+                    No birthday templates available yet.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- MENU BACKGROUND BLUR -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- FLOATING GLASS MENU -->
+    <div class="menu-window" id="menuWindow">
+
+        <div class="menu-title">RHK MENU</div>
+
+        <a href="#" class="menu-link">About</a>
+        <a href="#" class="menu-link">Contact</a>
+
+    </div>
 
 </div>
-</header>
-
-<section class="hero">
-
-<div class="badge">
-Android App Library
-</div>
-
-<h1>
-RHK <span>PROVIDER</span>
-</h1>
-
-<p>
-Discover Android applications in one simple place.
-Search, explore and download available apps.
-</p>
-
-<div class="search-box">
-
-<input
-type="search"
-id="searchInput"
-placeholder="Search apps..."
-autocomplete="off"
->
-
-</div>
-
-</section>
-
-<main id="apps">
-
-<div class="section-title">
-
-<h2>Apps</h2>
-
-<p id="appCount">Loading...</p>
-
-</div>
-
-<div class="categories">
-
-<button class="category active" data-category="all">
-All
-</button>
-
-<button class="category" data-category="tools">
-Tools
-</button>
-
-<button class="category" data-category="video">
-Video
-</button>
-
-<button class="category" data-category="other">
-Other
-</button>
-
-</div>
-
-<div class="loading" id="loading">
-Loading apps...
-</div>
-
-<div class="error-message" id="errorMessage">
-<b>Unable to load apps.</b>
-<br><br>
-The website could not read apps.json.
-<br><br>
-Check that apps.json is in the same GitHub Pages folder as index.html.
-</div>
-
-<div class="app-grid" id="appGrid"></div>
-
-<div class="no-results" id="noResults">
-No apps found.
-</div>
-
-</main>
-
-<footer>
-
-<strong>RHK PROVIDER</strong>
-
-<br><br>
-
-© 2026 RHK PROVIDER. All rights reserved.
-
-<br><br>
-
-Only apps that you are authorized to distribute should be uploaded to this website.
-
-</footer>
 
 <script>
 
-const searchInput =
-document.getElementById("searchInput");
+/* MENU */
+const menuBtn = document.getElementById("menuBtn");
+const menuWindow = document.getElementById("menuWindow");
+const menuOverlay = document.getElementById("menuOverlay");
 
-const appGrid =
-document.getElementById("appGrid");
-
-const appCount =
-document.getElementById("appCount");
-
-const loading =
-document.getElementById("loading");
-
-const errorMessage =
-document.getElementById("errorMessage");
-
-const noResults =
-document.getElementById("noResults");
-
-const categories =
-document.querySelectorAll(".category");
-
-let apps = [];
-
-let selectedCategory = "all";
-
-
-/* GET apps.json FROM SAME GITHUB PAGES LOCATION */
-
-function getAppsUrl(){
-
-    return new URL(
-        "apps.json",
-        window.location.href
-    ).href;
-
+function toggleMenu() {
+    menuWindow.classList.toggle("active");
+    menuOverlay.classList.toggle("active");
 }
 
-
-/* LOAD APPS */
-
-async function loadApps(){
-
-    try{
-
-        const url = getAppsUrl();
-
-        console.log("Loading:",url);
-
-        const response = await fetch(
-            url + "?v=" + Date.now(),
-            {
-                cache:"no-store"
-            }
-        );
-
-        if(!response.ok){
-
-            throw new Error(
-                "HTTP " + response.status
-            );
-
-        }
-
-        const text = await response.text();
-
-        console.log("apps.json:",text);
-
-        apps = JSON.parse(text);
-
-        if(!Array.isArray(apps)){
-
-            throw new Error(
-                "apps.json must contain an array"
-            );
-
-        }
-
-        loading.style.display="none";
-
-        renderApps();
-
-    }
-    catch(error){
-
-        console.error(
-            "APP LOAD ERROR:",
-            error
-        );
-
-        loading.style.display="none";
-
-        errorMessage.style.display="block";
-
-        appCount.textContent="0 apps";
-
-    }
-
+function closeMenu() {
+    menuWindow.classList.remove("active");
+    menuOverlay.classList.remove("active");
 }
 
-
-/* CREATE CARD */
-
-function createCard(app){
-
-    const card =
-    document.createElement("article");
-
-    card.className="app-card";
-
-    let iconHTML="▶";
-
-    if(app.image){
-
-        iconHTML=`
-        <img
-            src="${escapeHTML(app.image)}"
-            alt="${escapeHTML(app.name)}"
-            onerror="this.style.display='none';"
-        >
-        `;
-
-    }
-
-    card.innerHTML=`
-
-        <div class="app-top">
-
-            <div class="app-icon">
-                ${iconHTML}
-            </div>
-
-            <div>
-
-                <div class="app-name">
-                    ${escapeHTML(app.name)}
-                </div>
-
-                <div class="app-version">
-                    Version ${escapeHTML(app.version)}
-                    •
-                    ${escapeHTML(app.platform || "Android")}
-                </div>
-
-            </div>
-
-        </div>
-
-        <p class="app-description">
-            ${escapeHTML(app.description)}
-        </p>
-
-        <a
-            class="download-button"
-            href="${escapeHTML(app.download)}"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Download APK
-        </a>
-
-    `;
-
-    return card;
-
-}
+menuBtn.addEventListener("click", toggleMenu);
+menuOverlay.addEventListener("click", closeMenu);
 
 
-/* DISPLAY APPS */
+/* BIRTHDAY TEMPLATE DETECTION */
 
-function renderApps(){
+const templateGrid = document.getElementById("templateGrid");
+const templateCount = document.getElementById("templateCount");
+const emptyMessage = document.getElementById("emptyMessage");
+const trendingCard = document.getElementById("trendingCard");
 
-    const search =
-    searchInput.value
-    .toLowerCase()
-    .trim();
-
-    appGrid.innerHTML="";
-
-    const filtered =
-    apps.filter(app=>{
-
-        const name =
-        String(app.name || "")
-        .toLowerCase();
-
-        const description =
-        String(app.description || "")
-        .toLowerCase();
-
-        const category =
-        String(app.category || "other")
-        .toLowerCase();
-
-        const searchMatch =
-        name.includes(search) ||
-        description.includes(search);
-
-        const categoryMatch =
-        selectedCategory==="all" ||
-        category===selectedCategory;
-
-        return searchMatch && categoryMatch;
-
-    });
+const MAX_TEMPLATES = 30;
 
 
-    filtered.forEach(app=>{
+/* CHECK HTML FILE */
+async function checkTemplate(number) {
 
-        appGrid.appendChild(
-            createCard(app)
-        );
+    const file = `birthday${number}.html`;
 
-    });
-
-
-    appCount.textContent =
-    filtered.length +
-    (filtered.length===1 ? " app" : " apps");
-
-
-    noResults.style.display =
-    filtered.length===0
-    ? "block"
-    : "none";
-
-}
-
-
-/* SEARCH */
-
-searchInput.addEventListener(
-"input",
-renderApps
-);
-
-
-/* CATEGORY */
-
-categories.forEach(button=>{
-
-    button.addEventListener(
-    "click",
-    ()=>{
-
-        categories.forEach(item=>{
-            item.classList.remove("active");
+    try {
+        const response = await fetch(file, {
+            method: "HEAD",
+            cache: "no-store"
         });
 
-        button.classList.add("active");
+        if (response.ok) return true;
 
-        selectedCategory =
-        button.dataset.category;
+        if (response.status === 405) {
+            const fallback = await fetch(file, {
+                cache: "no-store"
+            });
+            return fallback.ok;
+        }
 
-        renderApps();
+        return false;
+
+    } catch (error) {
+        return false;
+    }
+}
+
+
+/* CREATE TEMPLATE CARD */
+function createTemplateCard(number) {
+
+    const fileName = `birthday${number}.html`;
+    const imageName = `birthday${number}.jpg`;
+
+    const card = document.createElement("a");
+
+    card.className = "template-card";
+    card.href = fileName;
+
+    const image = document.createElement("img");
+
+    image.className = "template-image";
+    image.src = imageName;
+    image.alt = `Birthday ${number}`;
+    image.loading = "lazy";
+
+    image.onerror = function() {
+        this.style.display = "none";
+    };
+
+    card.appendChild(image);
+
+    return card;
+}
+
+
+/* LOAD LATEST TRENDING TEMPLATE */
+function loadTrending(number) {
+
+    trendingCard.innerHTML = "";
+
+    const link = document.createElement("a");
+
+    link.className = "trending-link";
+    link.href = `birthday${number}.html`;
+
+    const image = document.createElement("img");
+
+    image.className = "trending-image";
+    image.src = `birthday${number}.jpg`;
+    image.alt = `Trending Birthday Template ${number}`;
+
+    image.onerror = function() {
+        this.style.display = "none";
+    };
+
+    link.appendChild(image);
+    trendingCard.appendChild(link);
+}
+
+
+/* LOAD AVAILABLE TEMPLATES */
+async function loadTemplates() {
+
+    templateGrid.innerHTML = "";
+    templateCount.textContent = "Checking...";
+    trendingCard.innerHTML = "";
+
+    let availableCount = 0;
+    let latestTemplate = 0;
+
+    const results = await Promise.all(
+        Array.from(
+            { length: MAX_TEMPLATES },
+            (_, index) => checkTemplate(index + 1)
+        )
+    );
+
+    results.forEach((available, index) => {
+
+        if (available) {
+
+            const number = index + 1;
+
+            availableCount++;
+
+            latestTemplate = Math.max(
+                latestTemplate,
+                number
+            );
+
+            templateGrid.appendChild(
+                createTemplateCard(number)
+            );
+
+        }
 
     });
 
-});
+    /* TEMPLATE COUNT */
+    templateCount.textContent =
+        `${availableCount} Available`;
 
+    /* EMPTY MESSAGE */
+    emptyMessage.style.display =
+        availableCount === 0 ? "block" : "none";
 
-/* ESCAPE HTML */
+    /* TRENDING */
+    if (latestTemplate > 0) {
 
-function escapeHTML(value){
+        loadTrending(latestTemplate);
 
-    return String(value ?? "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+    } else {
 
+        trendingCard.innerHTML = "";
+
+    }
 }
 
 
 /* START */
-
-loadApps();
+loadTemplates();
 
 </script>
 
